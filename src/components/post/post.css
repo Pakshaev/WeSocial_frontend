@@ -1,0 +1,51 @@
+.postWrapper {
+    width: 100%;
+    min-height: calc(121px + 430*((100vw - 320px)/(1440 - 320)));
+    border-radius: 20px;
+    background-color: rgba(242, 216, 184, 1);
+    margin-bottom: calc(10px + 100*((100vw - 320px)/(1440 - 320)));
+    padding: calc(10px + 6*((100vw - 320px)/(1440 - 320)));
+    display:flex;
+    flex-direction: column;
+}
+
+.postCreatorInfo {
+    display:flex;
+    align-items: center;
+}
+
+.postCreatorPhoto {
+    width: calc(16px + 28*((100vw - 320px)/(1440 - 320)));
+    height: calc(16px + 28*((100vw - 320px)/(1440 - 320)));
+    object-fit: cover;
+    border-radius: calc(16px + 4*((100vw - 320px)/(1440 - 320)));
+    margin-right: calc(8px + 8*((100vw - 320px)/(1440 - 320)));
+}
+
+.namePostCreator {
+    font-size: calc(10px + 10*((100vw - 320px)/(1440 - 320)));
+}
+
+.postContentWrapper {
+    margin: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postPhoto {
+    max-width: calc(200px + 145*((100vw - 320px)/(1440 - 320)));
+    height: auto;
+    margin-bottom: calc(6px + 30*((100vw - 320px)/(1440 - 320)));
+}
+
+.postText {
+    font-size: calc(10px + 10*((100vw - 320px)/(1440 - 320)));
+}
+
+.postLike {
+    align-self: center;
+    margin-top: auto;
+    font-size: calc(10px + 20*((100vw - 320px)/(1440 - 320))) !important;
+    cursor: pointer;
+}

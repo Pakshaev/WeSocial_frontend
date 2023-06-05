@@ -1,0 +1,72 @@
+.sidebar {
+    flex: 1 1 25%;
+    height: calc(100vh - 100px);
+    padding-left: calc(12px + 110*((100vw - 320px)/(1440 - 320)));
+    padding-top: calc(10px + 45*((100vw - 320px)/(1440 - 320)));
+}
+
+
+.sidebarProfileWrapper {
+    margin-bottom: calc(10px + 43*((100vw - 320px)/(1440 - 320)));
+    background-color: rgba(242, 216, 184, 1);
+    border-radius: calc(4px + 16*((100vw - 320px)/(1440 - 320)));
+    display: flex;
+    align-items: center;
+    padding: calc(4px + 10*((100vw - 320px)/(1440 - 320)));
+    cursor: pointer;
+    
+}
+
+.nameProfile {
+    font-size: calc(10px + 10*((100vw - 320px)/(1440 - 320)));
+}
+
+.sidebarListWrapper {
+    /* width: calc(12px + 221*((100vw - 320px)/(1440 - 320))); */
+    border-radius: 20px;
+    padding: calc(8px + 22*((100vw - 320px)/(1440 - 320)));
+    background-color: rgba(242, 216, 184, 1);
+}
+
+.sidebarList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(4px + 17*(100vw/1440));
+    padding: calc(4px + 8*(100vw/1440));
+    border-radius: 20px;
+    color: rgba(112, 85, 52, 1);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+@media screen and (max-width:750px) {     
+    .sidebar {
+        display: none;
+    }
+}
+
+.sidebarList :last-child {
+    margin-bottom: 0;
+}
+
+.sidebarIcon {
+    margin-right: calc(2px + 13*(100vw/1440));
+    font-size: calc(10px + 20*((100vw - 320px)/(1440 - 320))) !important;
+}
+
+.sidebarListItemText {
+    font-size: calc(8px + 12*(100vw/1440));
+}
+
+.linkSidebar {
+    color: inherit;
+    text-decoration: inherit;
+    display: block;
+    margin-bottom: calc(4px + 17*(100vw/1440));
+}

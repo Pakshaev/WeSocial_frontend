@@ -1,0 +1,24 @@
+.rightbar {
+    flex: 1 0 25%;
+    display: flex;
+    height: calc(100vh - 100px);
+    padding-top: calc(10px + 45*((100vw - 320px)/(1440 - 320)));
+}
+
+.profileSubscribersWrapper {
+    align-self: start;
+    margin-bottom: calc(10px + 43*((100vw - 320px)/(1440 - 320)));
+    background-color: rgba(242, 216, 184, 1);
+    border-radius: calc(4px + 16*((100vw - 320px)/(1440 - 320)));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(4px + 10*((100vw - 320px)/(1440 - 320)));
+    cursor: pointer;
+}
+
+.subscriber {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}

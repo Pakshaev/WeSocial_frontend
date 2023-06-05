@@ -1,0 +1,42 @@
+.feed {
+    flex: 1 1 75%;
+    /* overflow-y: scroll; 
+    direction: rtl; */
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.feed::-webkit-scrollbar {
+    width: 4px;
+}
+
+.feed::-webkit-scrollbar-thumb {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+}
+
+@media screen and (max-width:750px) {
+    .feed {
+        display: flex;
+        justify-content: center;
+    }
+
+    .feed::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feedWrapper {
+        width: 100% !important;
+        max-width: 450px;
+        height: auto;
+        margin: 30px !important;
+    }
+}
+
+.feedWrapper {
+    margin-left: calc(12px + 148*((100vw - 320px)/(1440 - 320)));
+    margin-top: calc(12px + 36*((100vw - 320px)/(1440 - 320)));
+    width: calc(126px + 430*((100vw - 320px)/(1440 - 320)));
+
+    /* direction: ltr; */
+}

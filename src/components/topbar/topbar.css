@@ -1,0 +1,78 @@
+.topbarContainer {
+    height: calc(40px + 60*((100vw - 320px)/(1440 - 320)));
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+.topbarLeft {
+    flex: 1 1 25%;
+    padding-left: calc(12px + 130*((100vw - 320px)/(1440 - 320)));
+    /* padding-top: calc(10px + 51*((100vw - 320px)/(1440 - 320))); */
+}
+
+.logo {
+    display: block;
+    line-height: 0.7;
+    font-weight: 500;
+    color: #252320;
+    font-size: calc(12px + 28*((100vw - 320px)/(1440 - 320)));
+}
+
+.topbarCenter {
+    flex: 1 1 50%;
+    /* padding-top: calc(16px + 51*((100vw - 320px)/(1440 - 320))); */
+    padding-left: calc(12px + 148*((100vw - 320px)/(1440 - 320)));
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    width: calc(126px + 430*((100vw - 320px)/(1440 - 320)));
+    height: calc(10px + 24*(100vw/1440));
+    background-color: #D9D9D9;
+    padding: calc(4px + 5*((100vw - 320px)/(1440 - 320)));
+}
+
+.searchInputIcon {
+    color: #6F6F6F;
+    font-size: calc(10px + 14*((100vw - 320px)/(1440 - 320))) !important;
+}
+
+.searchInput {
+    flex: 1;  
+    font-size: calc(4px + 16*(100vw/1440));
+    font-weight: 300;
+    margin-right: calc(6px + 22*(100vw/1440));
+    padding: calc(4px + 11*((100vw - 320px)/(1440 - 320)));
+    border: none;
+    background-color: transparent;
+    letter-spacing: -0.04em;
+}
+
+.searchInput::placeholder {
+    color: #6F6F6F;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.topbarRight {
+    flex: 1 1 25%;
+    /* padding-left: calc(12px + 42*((100vw - 320px)/(1440 - 320))); */
+    /* padding-top: calc(8px + 26*((100vw - 320px)/(1440 - 320))); */
+}
+
+.topbarImg {
+    display: block;
+    margin-left: calc(12px + 42*((100vw - 320px)/(1440 - 320)));
+    width: calc(28px + 36*((100vw - 320px)/(1440 - 320)));
+    height: calc(28px + 36*((100vw - 320px)/(1440 - 320)));
+    border-radius: calc(4px + 16*((100vw - 320px)/(1440 - 320)));
+    object-fit: cover;
+    cursor: pointer;
+    margin-top: auto;
+}
