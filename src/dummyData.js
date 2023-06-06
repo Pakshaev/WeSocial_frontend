@@ -39,6 +39,6 @@ export const Posts = [
         id: 4,
         text: "Дрался жестко",
         photo: "assets/person/tylerfight.png",
-        userId: 4,
-    },
+        userId: 3,
+    }
 ];
