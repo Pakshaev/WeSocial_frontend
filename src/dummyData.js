@@ -35,4 +35,10 @@ export const Posts = [
         photo: "assets/person/tylerfight.png",
         userId: 3,
     },
+    {
+        id: 4,
+        text: "Дрался жестко",
+        photo: "assets/person/tylerfight.png",
+        userId: 4,
+    },
 ];
