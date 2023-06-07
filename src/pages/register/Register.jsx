@@ -6,6 +6,7 @@ import {Navigate} from 'react-router-dom';
 export default function Register() {
     const [isRegistered, setRegistered] = useState(false);
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -17,24 +18,22 @@ export default function Register() {
             setErrorMessage('Пароли не совпадают');
             return;
         }
-        // Здесь вы можете добавить логику для отправки данных на сервер
-        // Например, вызов API для регистрации пользователя
+
         try {
             const response = await axios.post('/api/register', {
-                    email: username,
+                    email: email,
                     password: password,
+                    username: username,
                     role: "ROLE1"
                 }, {}
             );
-            console.log(response.data);
-            const token = response.data.token; // Получаем токен из ответа сервера
-            console.log(token);
+            const token = response.data.token;
             localStorage.setItem('token', token);
             setRegistered(true);
         } catch (error) {
             console.error(error);
-            // Обработка ошибок
         }
+        setEmail('');
         setUsername('');
         setPassword('');
         setConfirmPassword('');
@@ -59,6 +58,19 @@ export default function Register() {
                             </div>
                             <input
                                 type="email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <br/>
+                        <label>
+                            <div className="loginText">
+                                Username:
+                            </div>
+                            <input
+                                type="text"
                                 id="username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
