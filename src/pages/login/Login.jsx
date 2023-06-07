@@ -28,9 +28,7 @@ export default function Login() {
 
                 }
             );
-            console.log(response.data);
             const token = response.data.access_token;
-            console.log(token); // Обработка полученного токена
             localStorage.setItem('token', token);
             setLogined(true);
         } catch (error) {

@@ -27,8 +27,6 @@ export default function Register() {
                     role: "ROLE1"
                 }, {}
             );
-            const token = response.data.token;
-            localStorage.setItem('token', token);
             setRegistered(true);
         } catch (error) {
             console.error(error);
