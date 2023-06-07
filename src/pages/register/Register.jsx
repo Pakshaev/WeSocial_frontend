@@ -58,7 +58,7 @@ export default function Register() {
                                 Email:
                             </div>
                             <input
-                                type="text"
+                                type="email"
                                 id="username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
