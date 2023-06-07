@@ -24,7 +24,7 @@ export default function Register() {
                     email: email,
                     password: password,
                     username: username,
-                    role: "ROLE1"
+                    role: "USER"
                 }, {}
             );
             setRegistered(true);
