@@ -1,28 +1,27 @@
 import "./share.css"
-import { PermMedia, EmojiEmotions } from "@mui/icons-material"
+import React, { useState } from 'react';
 
-export default function Share() {
+const Share = () => {
+    const [newsText, setNewsText] = useState('');
+
+    const handleShare = () => {
+        // Логика для обработки действия "Поделиться" с текстом новости
+        // Здесь можно использовать стороннюю библиотеку или API для выполнения этой функции
+        console.log('Поделиться новостью:', newsText);
+    };
+
+    const handleChange = (event) => {
+        setNewsText(event.target.value);
+    };
+
     return (
         <div className="share">
-            <div className="shareWrapper">
-                <div className="shareTop">
-                    <img src="/assets/person/2.jpg" alt="" className="shareProfileImg" />
-                    <input placeholder="Whata fuk" className="shareInput" />
-                </div>
-                <hr className="shareHr" />
-                <div className="shareBottom">
-                    <div className="shareOptions">
-                        <div className="shareOption">
-                            <PermMedia className="shareIcon" />
-                            <span className="shareOptionText">Photo or video</span>
-                        </div>
-                        <div className="shareOption">
-                            <EmojiEmotions className="shareIcon" />
-                            <span className="shareOptionText">Feelings</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <textarea classname="inputNews" value={newsText} onChange={handleChange} />
+            <button onClick={handleShare}>
+                Поделиться
+            </button>
         </div>
-    )
-}
+    );
+};
+
+export default Share;

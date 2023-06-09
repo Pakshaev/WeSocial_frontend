@@ -1,8 +1,13 @@
 .share {
-    width: 556px;
-    height: 551px;
+    width: 100%;
+    display: flex;
     border-radius: 20px;
     background-color: rgba(242, 216, 184, 1);
+    margin-bottom: 25px;
+}
+
+.inputNews {
+    width: 100%;
 }
 
 .shareWrapper {
