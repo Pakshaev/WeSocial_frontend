@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import "./register.css";
-import {Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export default function Register() {
     const [isRegistered, setRegistered] = useState(false);
@@ -21,11 +21,11 @@ export default function Register() {
 
         try {
             const response = await axios.post('/api/register', {
-                    email: email,
-                    password: password,
-                    username: username,
-                    role: "USER"
-                }, {}
+                email: email,
+                password: password,
+                name: username,
+                role: "USER"
+            }, {}
             );
             setRegistered(true);
         } catch (error) {
@@ -62,7 +62,7 @@ export default function Register() {
                                 required
                             />
                         </label>
-                        <br/>
+                        <br />
                         <label>
                             <div className="loginText">
                                 Username:
@@ -75,7 +75,7 @@ export default function Register() {
                                 required
                             />
                         </label>
-                        <br/>
+                        <br />
                         <label>
                             <div className="loginText">
                                 Password:
@@ -88,7 +88,7 @@ export default function Register() {
                                 required
                             />
                         </label>
-                        <br/>
+                        <br />
                         <label>
                             <div className="loginText">
                                 Confirm Password:
@@ -101,8 +101,8 @@ export default function Register() {
                                 required
                             />
                         </label>
-                        <br/>
-                        {errorMessage && <div style={{color: 'red'}}>{errorMessage}</div>}
+                        <br />
+                        {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
                         <button type="submit">Зарегистрироваться</button>
                     </form>
                 </div>
