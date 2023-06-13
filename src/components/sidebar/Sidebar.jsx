@@ -2,14 +2,14 @@ import "./sidebar.css"
 import { Person, CottageOutlined } from "@mui/icons-material"
 import { Link } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function Sidebar({userName}) {
     return (
         <div className="sidebar">
             <div className="sidebarWrapper">
                 <div className="sidebarProfileWrapper">
                     <img src="/assets/person/2.jpg" alt="" className="postCreatorPhoto" />
                     <span className="nameProfile">
-                        Egor Bulkin
+                        {userName}
                     </span>
                 </div>
                 <div className="sidebarListWrapper">
