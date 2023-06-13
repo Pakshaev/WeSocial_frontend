@@ -4,12 +4,12 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Feed from "../../components/feed/Feed"
 import Rightbar from "../../components/rightbar/Rightbar"
 
-export default function Profile() {
+export default function Profile({userName}) {
     return (
         <>
             <Topbar />
             <div className="profileContainer">
-                <Sidebar />
+                <Sidebar userName={userName}/>
                 <Feed />
                 <Rightbar />
             </div>
