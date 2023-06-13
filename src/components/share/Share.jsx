@@ -1,13 +1,26 @@
 import "./share.css"
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const Share = () => {
     const [newsText, setNewsText] = useState('');
-
-    const handleShare = () => {
-        // Логика для обработки действия "Поделиться" с текстом новости
-        // Здесь можно использовать стороннюю библиотеку или API для выполнения этой функции
-        console.log('Поделиться новостью:', newsText);
+    const token = localStorage.getItem('token');
+    const handleShare = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('/api/messages', {
+                text: newsText,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+            }
+        });
+        console.log('Message sent:', response.data);
+        setNewsText('');
+        } catch (error) {
+            console.error(error);
+            // Обработка ошибок
+        }
     };
 
     const handleChange = (event) => {

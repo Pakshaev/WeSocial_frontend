@@ -1,7 +1,7 @@
 import "./post.css"
 import { FavoriteBorder } from "@mui/icons-material"
 import { Users } from "../../dummyData"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export default function Post({ post, users }) {
   const [isLiked, setIsLiked] = useState(false);
@@ -14,7 +14,7 @@ export default function Post({ post, users }) {
   return (
     <div className="postWrapper">
       <div className="postCreatorInfo">
-        <img src={Users.filter(u => u.id === post.userId)[0].profilePicture} alt="" className="postCreatorPhoto" />
+        <img src={Users.filter(u => u.id === post.userId)[0]?.profilePicture} alt="" className="postCreatorPhoto" />
         <span className="namePostCreator">
           {users.filter(u => u.id === post.userId)[0]?.name}
         </span>
