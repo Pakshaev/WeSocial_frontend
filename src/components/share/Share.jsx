@@ -16,7 +16,7 @@ const Share = () => {
 
     return (
         <div className="share">
-            <textarea classname="inputNews" value={newsText} onChange={handleChange} />
+            <textarea className="inputNews" value={newsText} onChange={handleChange} />
             <button onClick={handleShare}>
                 Поделиться
             </button>

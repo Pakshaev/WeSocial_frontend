@@ -5,33 +5,31 @@ import { Posts } from "../../dummyData"
 import React, { useEffect, useState } from 'react';
 
 export default function Feed() {
-    const [messages, setMessages] = useState([]);
-    const token = localStorage.getItem('token');
+  const [users, setUsers] = useState([]);
+  const token = localStorage.getItem('token');
   useEffect(() => {
-    // Функция для выполнения GET-запроса и получения сообщений
-    const fetchMessages = async () => {
+    const fetchUsers = async () => {
       try {
-        const response = await fetch('/api/messages',{
-            headers: {
+        const response = await fetch('/api/users', {
+          headers: {
             Authorization: `Bearer ${token}`,
-            },
-          });
+          },
+        });
         const data = await response.json();
         console.log(data);
-        setMessages(data);
+        setUsers(data);
       } catch (error) {
         console.error('Ошибка при получении сообщений:', error);
       }
     };
-
-    fetchMessages();
+    fetchUsers();
   }, []);
     return (
         <div className="feed">
             <div className="feedWrapper">
                 {<Share />}
                 {Posts.map((p) => (
-                    <Post key={p.id} post={p} />
+                    <Post key={p.id} post={p} users={users} />
                 ))}
             </div>
         </div>

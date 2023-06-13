@@ -3,27 +3,9 @@ import { FavoriteBorder } from "@mui/icons-material"
 import { Users } from "../../dummyData"
 import { useEffect, useState } from "react"
 
-export default function Post({ post }) {
-  const [users, setUsers] = useState([]);
+export default function Post({ post, users }) {
   const [isLiked, setIsLiked] = useState(false);
-  const token = localStorage.getItem('token');
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch('/api/users', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        const data = await response.json();
-        console.log(data);
-        setUsers(data);
-      } catch (error) {
-        console.error('Ошибка при получении сообщений:', error);
-      }
-    };
-    fetchUsers();
-  }, []);
+  
   const likeHandler = () => {
     setIsLiked(!isLiked);
   }

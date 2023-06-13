@@ -1,9 +1,9 @@
 import "./login.css";
 import axios from 'axios';
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
-import {SensorDoorOutlined} from "@mui/icons-material";
-import {Navigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { SensorDoorOutlined } from "@mui/icons-material";
+import { Navigate } from 'react-router-dom';
 
 export default function Login() {
     const [isLogined, setLogined] = useState(false);
@@ -22,14 +22,15 @@ export default function Login() {
         e.preventDefault();
         try {
             const response = await axios.post('/api/login', {
-                    email: email,
-                    password: password
-                }, {
-
-                }
+                email: email,
+                password: password
+            }, {
+            }
             );
             const token = response.data.access_token;
+            const id = response.data.id;
             localStorage.setItem('token', token);
+            localStorage.setItem('id', id);
             setLogined(true);
         } catch (error) {
             console.error(error);
@@ -54,18 +55,18 @@ export default function Login() {
                                 <div className="loginText">
                                     Email:
                                 </div>
-                                <input type="email" value={email} onChange={handleEmailChange}/>
+                                <input type="email" value={email} onChange={handleEmailChange} />
                             </label>
 
-                            <br/>
+                            <br />
                             <label>
                                 <div className="loginText">
                                     Password:
                                 </div>
-                                <input type="password" value={password} onChange={handlePasswordChange}/>
+                                <input type="password" value={password} onChange={handlePasswordChange} />
                             </label>
-                            <br/>
-                            <SensorDoorOutlined/>
+                            <br />
+                            <SensorDoorOutlined />
                             <button type="submit">Sign In</button>
                         </form>
                         <p>Don't have an account yet?</p>
